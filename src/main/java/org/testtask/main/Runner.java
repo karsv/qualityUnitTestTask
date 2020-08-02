@@ -17,8 +17,8 @@ import org.testtask.service.BikeService;
 import org.testtask.service.impl.EbikeServiceImpl;
 import org.testtask.service.impl.FoldingbikeServiceImpl;
 import org.testtask.service.impl.SpeedelecBikeServiceImpl;
-import org.testtask.util.DataService;
-import org.testtask.util.FileService;
+import org.testtask.service.DataService;
+import org.testtask.service.FileService;
 
 @Component
 public class Runner {

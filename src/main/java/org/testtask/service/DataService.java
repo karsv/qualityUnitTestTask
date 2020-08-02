@@ -1,4 +1,4 @@
-package org.testtask.util;
+package org.testtask.service;
 
 import java.util.List;
 import org.testtask.exceptions.DataIsNotValidException;

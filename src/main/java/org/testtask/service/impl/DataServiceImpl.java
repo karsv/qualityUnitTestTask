@@ -1,4 +1,4 @@
-package org.testtask.util.impl;
+package org.testtask.service.impl;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.testtask.exceptions.DataIsNotValidException;
 import org.testtask.factory.BikeFactory;
@@ -14,7 +15,7 @@ import org.testtask.models.Ebike;
 import org.testtask.models.FoldingBike;
 import org.testtask.models.SpeedelecBike;
 import org.testtask.service.BikeService;
-import org.testtask.util.DataService;
+import org.testtask.service.DataService;
 
 @Service
 public class DataServiceImpl implements DataService {
@@ -27,8 +28,11 @@ public class DataServiceImpl implements DataService {
     private final BikeService<SpeedelecBike> speedelecBike;
 
     public DataServiceImpl(BikeFactory bikeFactory,
+                           @Qualifier("bikeMongodbServiceImpl")
                            BikeService<FoldingBike> foldingBike,
+                           @Qualifier("bikeMongodbServiceImpl")
                            BikeService<Ebike> ebike,
+                           @Qualifier("bikeMongodbServiceImpl")
                            BikeService<SpeedelecBike> speedelecBike) {
         this.bikeFactory = bikeFactory;
         this.foldingBike = foldingBike;
@@ -52,9 +56,9 @@ public class DataServiceImpl implements DataService {
             }
         }
 
-        Collections.sort(speedelecBike.getAll());
-        Collections.sort(ebike.getAll());
-        Collections.sort(foldingBike.getAll());
+//        Collections.sort(speedelecBike.getAll());
+//        Collections.sort(ebike.getAll());
+//        Collections.sort(foldingBike.getAll());
     }
 
     public List<? extends Bike> getAllBikes() {
