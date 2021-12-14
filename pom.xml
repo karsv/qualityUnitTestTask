@@ -50,7 +50,7 @@
     <properties>
         <java.version>11</java.version>
         <spring.version>5.2.5.RELEASE</spring.version>
-        <log4j2.version>2.13.3</log4j2.version>
+        <log4j2.version>2.16.0</log4j2.version>
         <junit.versiom>5.6.2</junit.versiom>
         <mockito.version>1.9.5</mockito.version>
         <maven.compiler.target>1.8</maven.compiler.target>
